@@ -3,4 +3,3 @@
 * Aufzählung 1
 * Aufzählung 2
 * Aufzählung 3
-
