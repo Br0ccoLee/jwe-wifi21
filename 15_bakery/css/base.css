@@ -1,0 +1,111 @@
+:root{     /*webfonts-helper*/
+    --brown: #D0B085;
+    --grey: #707070;
+
+}
+
+/* josesfin-sans-regular - latin */
+@font-face {
+    font-family: 'Josefin Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),
+         url('../fonts/josefin-sans-v12-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('../fonts/josefin-sans-v12-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+
+/*josefin-sans-bold - latin */
+@font-face {
+    font-family: 'Josefin Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: local(''),
+         url('../fonts/josefin-sans-v12-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('../fonts/josefin-sans-v12-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 110%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+address {
+    font-style: normal;
+}
+
+.inner_wrapper {
+    max-width: 1200px;
+    padding: 0 30px;
+    margin: 0 auto;
+}
+
+.inner_wrapper h2 {
+    text-transform: uppercase;
+    font-weight: normal;
+    text-align: center;   
+}
+
+.adresse h2 {
+    text-transform: uppercase;
+    font-weight: normal;
+    text-align: center;
+}
+
+.btn {
+    padding: 20px 25px;
+    border: 2px solid;
+    display: inline-block;
+    margin-bottom: 1.5em;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.btn_soft {
+    color: var(--brown);
+    border-color: var(--brown)
+}
+
+.btn_hard {
+    color: white;
+    background-color: var(--brown);
+    border-color: var(--brown);
+}
+
+.btn_small {
+    padding: 10px 20px;
+    border: 1px solid;
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+    background-color: var(--brown);
+}
+
+#top .inner_wrapper {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+}
+
+iframe {
+    max-width: 100%;
+    border: none;
+}
+
+a {
+    color: black;
+}

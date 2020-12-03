@@ -1,0 +1,13 @@
+#logo {/*rem = relative Einheit die sich auf die Ursprungsgröße  des root Elements bezieht
+            (also dort wo die Schriftgröße definiert wurde */
+    max-width: calc(100% - 10rem); 
+    padding: 20px 0 10px 0;
+}
+
+#logo img {
+    max-width: 200px;
+}
+
+#top .inner_wrapper {
+    justify-content: space-between;
+}

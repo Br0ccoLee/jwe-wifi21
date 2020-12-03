@@ -1,0 +1,68 @@
+h2 {
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: normal;
+}
+
+.form_overall {
+    padding-top: 40px;
+}
+
+.form {
+    padding-top: 15px;
+    width: 100%;
+}
+
+input {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 50%;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-family: 'Josefin Sans';
+    border: 2px solid;
+    border-color: var(--brown);
+}
+
+
+#nachricht {
+    padding-bottom: 100px;
+    margin-bottom: 50px;
+    
+}
+
+#form_content .form_overall {
+    display: flex;
+    justify-content: space-between;
+}
+
+address {
+    display: inline-block;
+    padding-top: 15%;
+    padding-left: 50px;
+}
+
+fieldset {
+    border: none;
+}
+
+.form a {
+    color: var(--brown);
+    text-decoration: none;
+}
+
+.text_with_button a {
+    color: white;
+}
+
+.text_with_button {
+    padding-top: 1px;
+}
+
+.adresse {
+    padding-top: 50px;
+}
+
+.form_content .form_overall .form #test {
+    font-weight: 200;
+}

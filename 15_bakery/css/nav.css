@@ -1,0 +1,46 @@
+#main_menu ul{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+}
+
+#main_menu li{
+    padding: 0;
+    margin: 0;
+}
+
+#main_menu li a{
+    text-decoration: none;
+}
+
+#main_menu li a:hover{
+    text-decoration:underline;
+}
+
+@media (min-width:992px) {
+#main_menu ul{
+    height: 100%;
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+    #main_menu ul li{
+        margin-right: 15px;
+       
+    }
+
+    #main_menu a {
+        color: var(--grey);
+        text-decoration: none;
+        padding: 1em; /* padding betrifft in dem Fall nur die Link bzw Klickgröße und ändert nichts an der rundherum liegenden Größe */
+        font-size: 18px;
+    }
+}
+
+    #main_menu a:hover {
+        color: var(--brown);
+        text-decoration: underline;
+    }
