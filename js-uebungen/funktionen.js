@@ -8,13 +8,6 @@ function saymyName (name) {
     //console.log ('Your name is '+ name);
 }
 
-saymyName('Roland');
-saymyName('Bernhard');
-saymyName('Bronto');
-saymyName('Fintch');
-
-saymyName(userNamefromDataBase);
-
 
 function checkMyInput(input) {
     if( typeof input == 'string' ) {
@@ -26,5 +19,13 @@ function checkMyInput(input) {
         return false;
     }
 }
+
+
+saymyName('Roland');
+saymyName('Bernhard');
+saymyName('Bronto');
+saymyName('Fintch');
+saymyName(userNamefromDataBase);
+
 
 let ergebnisMeinerFunktion = checkMyInput('Roland');
