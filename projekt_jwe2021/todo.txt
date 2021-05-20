@@ -1,0 +1,11 @@
+- Formularvorausfüllung nach einloggen
+- fehlermeldung ausgeben wenn name nicht eingetragen in Formular
+- vergangene Besuche pro User
+- eingeloggter Lokalbesitzer soll seinen Namen + Lokal sehen UND welche Gäste wann bei ihm waren /sort by days
+
+- Geolocation integrieren - 
+- jQuery Animationen integrieren - 
+
+
+- integrieren der automatischen Datenlöschung nach gewisser Zeit - 
+ 

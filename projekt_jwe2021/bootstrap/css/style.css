@@ -1,0 +1,56 @@
+#hinweis {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    padding: 2px;
+    background-color: rgb(226, 213, 25);
+    z-index: 1;
+}
+
+.hidden {
+    display: none !important;
+}
+
+#hinweisbox {
+    position: fixed;
+    bottom: -130px;
+    right: 0px;
+    width: calc(100vw - 100px);
+    padding: 20px 50px;
+    background-color: var(--b2);
+    border-top: 5px solid var(--c1);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    column-gap: 20px;
+}
+
+#hinweisbox p {
+    grid-column: 1 / span 2;
+    color: var(--c1);
+    font-weight: bold;
+    font-size: 120%;
+    padding: 0;
+    margin: 0 0 20px 0;
+    text-align: center;
+}
+
+#zustimmen {
+    width: 150px;
+    justify-self: right;
+}
+
+#ablehnen {
+    width: 150px;
+    justify-self: left;
+}
+
+#loeschen {
+    border-radius: 30px;
+    font-weight: normal;
+    font-size: 10px;
+    padding: 2px 5px;
+}
