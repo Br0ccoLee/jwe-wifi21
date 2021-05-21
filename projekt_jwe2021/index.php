@@ -3,6 +3,10 @@
 	echo md5("roland");
 	echo "<br>";
 	echo md5("goldeneRose12345");
+	echo "<br>";
+	echo md5("hitchcock");
+	echo "<br>";
+	echo md5("manuel");
 
    session_start();
 
@@ -23,26 +27,26 @@
 <html>
 <head>
 
-	<title>multi-user role-based-login-system</title>
-
-	
+	<title>Restaurant Login Kaltenboeck</title>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 	<link href="bootstrap/css/bootstrap.css" rel="stylesheet">
-	<link href="bootstrap/css/cookie.css" rel="stylesheet">
 
-	<link href="bootstrap/css/style.css" rel="stylesheet">
+	
+	<link href="bootstrap/css/style1.css" rel="stylesheet">
+	<link href="bootstrap/css/cookie.css" rel="stylesheet">
+	
 
 </head>
 <body>
 <p id='hinweis' class="hidden">Die Seite funktioniert nur eingeschränkt, denn es wurden keine Marketing Cookies
         erlaubt!</p>
 
-      <div class="container d-flex justify-content-center align-items-center"
-      style="min-height: 100vh">
-      	<form class="border shadow p-3 rounded"
+      <div class="innerWrapper_login">
+		  
+      	<form class="border"
       	      action="php/check-login.php" 
       	      method="post" 
-      	      style="width: 450px;">
+      	      >
       	      <h1 class="text-center p-3">LOGIN</h1>
       	      <?php if (isset($_GET['error'])) { ?>
       	      <div class="alert alert-danger" role="alert">
@@ -82,8 +86,9 @@
 		  </select>
 		 
 		  <button type="submit" 
-		          class="btn btn-primary">LOGIN</button>
+		          class="btn_log">LOGIN</button>
 		</form>
+		  
       </div>
 
         <!-- !!!NEW OPEN HINWEISBOX -->
@@ -111,3 +116,6 @@
 <?php }else{
 	header("Location: home.php");
 } ?>
+
+<!--
+ -->

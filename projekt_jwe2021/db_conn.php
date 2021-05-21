@@ -6,6 +6,7 @@ $password = "";
 
 $db_name = "kaltenboeck_db";
 
+// Verbindung zur DB herstellen
 $conn = mysqli_connect($sname, $uname, $password, $db_name);
 
 // MySQL mitteilen, dass unsere Befehle als utf8 kommen

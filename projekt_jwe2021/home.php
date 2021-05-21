@@ -9,8 +9,7 @@
    if (isset($_SESSION['name']) && isset($_SESSION['id'])) {  
 	   
 	 
-	
-	?>
+?>
 
 
 	
@@ -20,26 +19,28 @@
 <head>
 	<title>HOME</title>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+	<link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+
+	<link href="bootstrap/css/style1.css" rel="stylesheet">
 </head>
 <body>
-      <div class="container d-flex justify-content-center align-items-center"
-      style="min-height: 100vh">
+    <div class="innerWrapper">
       	<?php if ($_SESSION['role'] == 'admin') {?>
       		<!-- Adminbereich -->
-      		<div class="card" style="width: 18rem;">
+      		<div class="card_img">
 			  <img src="img/admin-default.png" 
 			       class="card-img-top" 
 			       alt="admin image">
-			  <div class="card-body text-center">
+			  <div class="card-body">
 			    <h5 class="card-title">
-			    	<?=$_SESSION['name']?>
+			    	<?=$_SESSION['username']?>
 			    </h5>
-			    <a href="logout.php" class="btn btn-dark">Logout</a>
+			    
 			  </div>
 			</div>
 			<div class="p-3">
-				<?php include 'php/members.php';
-                 if (mysqli_num_rows($res) > 0) {?>
+				<?php include 'php/members.php'; 
+                 {?>
                   
 				<h1 class="display-4 fs-1">Members</h1>
 				<table class="table" 
@@ -52,36 +53,33 @@
 				  </thead>
 				  <tbody>
 				  	<?php 
-				  	$i =1;
-				  	while ($rows = mysqli_fetch_assoc($res)) {?>
+				  	{?>
 				    <tr>
-				      <td><?=$rows['name']?></td>
-				      <td><?=$rows['username']?></td>
+						<?php 
+					echo "<td>$_SESSION[username]</td>";
+					echo "<td>$_SESSION[name]</td>";?>
+				      
 				    </tr>
-				    <?php $i++; }?>
+				    <?php }?>
 				  </tbody>
 				</table>
+				
 				<?php }?>
 			</div>
       	<?php }else { ?>
       		<!-- Gästebereich -->
               
-      		<div class="card" style="width: 32rem;">
-			  <img src="img/user-default.png" 
-			       class="card-img-top" 
-			       alt="admin image">
-			  <div class="card-body text-center">
-			    <h5 class="card-title">
-			    	<?=$_SESSION['name']?>
-			    </h5>
+				<?php include 'kopf.php' ?>
                 <?php include 'besuch_dokumentieren.php' ?>
-				<a href="#">Bisherige Besuche</a>
-			    <a href="logout.php" class="btn btn-dark">Logout</a>
-			  </div>
-			</div>
+				
+				 
+				
+				
+			   
+				
             
       	<?php } ?>
-      </div>
+    </div>
 
 
 
@@ -90,3 +88,5 @@
 <?php }else{
 	header("Location: index.php");
 } ?>
+
+<?php include 'fuss.php' ?>

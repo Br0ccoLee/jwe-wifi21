@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 20. Mai 2021 um 12:10
+-- Erstellungszeit: 21. Mai 2021 um 21:24
 -- Server-Version: 10.4.17-MariaDB
 -- PHP-Version: 8.0.2
 
@@ -48,7 +48,10 @@ CREATE TABLE `gaesteliste` (
 INSERT INTO `gaesteliste` (`id`, `vorname`, `nachname`, `restaurant`, `anzahl_erwachsene`, `anzahl_kinder`, `zeit_lokal_betreten`, `zeit_lokal_verlassen`, `datum`, `mail`, `userid`) VALUES
 (96, 'Roland', 'Kaltenböck', 'GoldeneRose', 1, 0, '15:39:00.000000', '17:39:00.000000', '2021-05-17', 'roland.kaltenboeck@gmx.at', 1),
 (97, 'Roland', 'Kaltenböck', 'GoldeneRose', 1, 5, '15:53:00.000000', '21:53:00.000000', '2021-05-18', 'roland.kaltenboeck@gmx.at', 1),
-(98, 'Roland', 'Kaltenböck', 'GoldeneRose', 1, 0, '12:53:00.000000', '17:53:00.000000', '2021-05-19', 'roland.kaltenboeck@gmx.at', 1);
+(98, 'Roland', 'Kaltenböck', 'GoldeneRose', 1, 0, '12:53:00.000000', '17:53:00.000000', '2021-05-19', 'roland.kaltenboeck@gmx.at', 1),
+(99, 'Roland', 'Kaltenböck', 'Fenster zum Hof', 1, 0, '20:08:00.000000', '00:09:00.000000', '2021-05-19', 'roland.kaltenboeck@gmx.at', 1),
+(100, 'Roland', 'Kaltenböck', 'Manuel´s Gaming Restaurant', 1, 5, '12:53:00.000000', '15:53:00.000000', '2021-05-20', 'roland.kaltenboeck@gmx.at', 1),
+(111, 'Roland', 'Kaltenböck', 'GoldeneRose', 2, 0, '19:34:00.000000', '20:34:00.000000', '2021-05-20', 'roland.kaltenboeck@gmx.at', 1);
 
 -- --------------------------------------------------------
 
@@ -86,7 +89,9 @@ CREATE TABLE `restaurantbesitzer` (
 --
 
 INSERT INTO `restaurantbesitzer` (`id_restaurant`, `id_besitzer`) VALUES
-(1, 0);
+(1, 0),
+(2, 2),
+(3, 3);
 
 -- --------------------------------------------------------
 
@@ -109,8 +114,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `role`, `username`, `password`, `name`, `nachname`, `mail`) VALUES
-(0, 'admin', 'Goldene Rose', 'ba9c2d245cf02bafed8faf274ed125be', 'Testname', 'test', 'test'),
-(1, 'user', 'Roland', 'ee21d5f27a8401788147f6f6184ddb11', 'Roland', 'Kaltenböck', 'roland.kaltenboeck@gmx.at');
+(0, 'admin', 'Hildegard', 'ba9c2d245cf02bafed8faf274ed125be', 'Goldene Rose', 'Brot', 'hildegard.brot@gmx.at'),
+(1, 'user', 'Roland', 'ee21d5f27a8401788147f6f6184ddb11', 'Roland', 'Kaltenböck', 'roland.kaltenboeck@gmx.at'),
+(2, 'admin', 'Alfred', '01a9a73da72226fc32fe1ce5c899b46d', 'Das Fenster zum Hof', 'Hitchcock', 'a.hitchcock@gmail.com'),
+(3, 'admin', 'Manuel', '96917805fd060e3766a9a1b834639d35', 'Manuel´s Gaming Restaurant', 'Pfister', 'manuel@pfister.com');
 
 --
 -- Indizes der exportierten Tabellen
@@ -150,7 +157,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT für Tabelle `gaesteliste`
 --
 ALTER TABLE `gaesteliste`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=99;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=112;
 
 --
 -- AUTO_INCREMENT für Tabelle `restaurant`

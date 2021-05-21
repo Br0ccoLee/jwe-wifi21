@@ -10,7 +10,8 @@ $sql_nachname = "";
 $sql_mail = "";
 $sql_gaesteliste_id = "";
 $sql_id = "";
-$sql_user_id = $_SESSION['id'];
+$_SESSION = "";
+$_GET['id'] = "";
 
 
 ?>
@@ -28,11 +29,12 @@ if (!empty($_POST)) {
 	$sql_zeit_lokal_verlassen = escape($_POST['zeit_lokal_verlassen']);
 	$sql_datum_besuch = escape($_POST['datum']);
 	$sql_mail = escape($_POST['mail']);
-    $sql_user_id = $_SESSION['id'];
+    $sql_id = ($_GET['id']);
+    
     
 
-    // Daten in DB speichern
-    query("INSERT INTO gaesteliste SET 
+
+    query("UPDATE gaesteliste SET 
         vorname = '{$sql_vorname}',
         nachname = '{$sql_nachname}', 
         restaurant = '{$sql_restaurant}',
@@ -42,33 +44,36 @@ if (!empty($_POST)) {
 		zeit_lokal_verlassen = '{$sql_zeit_lokal_verlassen}',
 		datum = '{$sql_datum_besuch}',
 		mail = '{$sql_mail}',
-        userid = '{$sql_user_id}'
+        WHERE id = '{$sql_id}'
         ");
 
     $erfolg = true;
 
-    
-
 }
+
+    // Datenbank zur Vorausfüllung fragen
+    $sql_id = ($_GET['id']);
+    $result = query("SELECT * FROM gaesteliste WHERE id = '{$sql_id}'");
+    $row = mysqli_fetch_assoc($result);
 ?>
 
-<h1>Besuch dokumentieren</h1>
+<h1>Besuch bearbeiten</h1>
 
-<form action="home.php" method="POST" class="form_index">
+<form action="besuch_bearbeiten.php?id=<?php echo $row['id']; ?>" method="POST" class="form_index">
     <div>
         <label for="vorname">Vorname:</label><br>
         <input type="text" name="vorname" id="vorname" value="<?php 
         
         
                                                                 if (!empty($_POST['vorname']) && !$erfolg) {
-                                                                    echo htmlspecialchars($_POST['name']);
-                                                                } else echo $sql_vorname ?>" required>
-    <br>
+                                                                    echo htmlspecialchars($_POST['vorname']);
+                                                                } else echo htmlspecialchars ($row['name']); ?>" readonly>
+    
     
         <label for="nachname">Nachname:</label><br>
         <input type="text" name="nachname" id="nachname" value="<?php if (!empty($_POST['nachname']) && !$erfolg) {
                                                                     echo htmlspecialchars($_POST['nachname']);
-                                                                } else echo $sql_nachname?>" required>
+                                                                } else echo htmlspecialchars ($row['nachname']); ?>" readonly>
     <br>
 
                 <label for="restaurant" class="form_index"
@@ -98,7 +103,7 @@ if (!empty($_POST)) {
 
 
 
-			<div>
+			<div class="col-md-3">
                 <label for="anzahl_erwachsene" class="form-label"
                     >Anzahl der Erwachsenen</label
                 ><br>
@@ -117,7 +122,7 @@ if (!empty($_POST)) {
                 </select>
 
 
-                <div>
+                <div class="col-md-3">
                 <label for="anzahl_kinder" class="form-label"
                     >Anzahl der Kinder</label
                 ><br>
@@ -135,23 +140,23 @@ if (!empty($_POST)) {
                     <option>4</option>
                     <option>5</option>
                 </select>
-                    <br>
+
 		
                
 
 			<label for="zeit_lokal_betreten" id="l_t_lokal_betreten">Uhrzeit Lokal betreten:</label><br>
             <input type="time" name="zeit_lokal_betreten" id="t_lokal_betreten" required><br>
             <label for="zeit_lokal_verlassen" id="l_t_lokal_verlassen">Uhrzeit Lokal verlassen:</label><br>
-            <input type="time" name="zeit_lokal_verlassen" id="t_lokal_verlassen" required><br>
+            <input type="time" name="zeit_lokal_verlassen" id="t_lokal_verlassen" required>
             
             <label for="datum" id="l_date">Datum:</label><br>
-            <input type="date" format="yyy.mm.dd" name="datum" id="l_datum" required><br>
+            <input type="date" format="yyy.mm.dd" name="datum" id="l_datum" required>
             
 
             <label for="mail" id="u_mail">Ihre E-Mail Adresse:</label><br>
             <input type="email" name="mail" id="u_mail" placeholder="Bitte E-Mail Adresse eintragen" value="<?php if (!empty($_POST['mail']) && !$erfolg) {
                                                                     echo htmlspecialchars($_POST['mail']);
-                                                                } else echo $sql_mail?>" required>
+                                                                } else echo htmlspecialchars ($row['vorname']); ?>" readonly>
 		
 	
                                                     
@@ -202,24 +207,13 @@ while ($row = mysqli_fetch_assoc($result)) {
     echo "</tbody>";
     echo "<br>";
     echo "<table>";
-    echo "<a href='besuch_bearbeiten.php'>Besuch bearbeiten</a>"
+
     ;}
     // Erfolgsmeldung
     if ($erfolg) {
-        echo "<p><strong>Besuch wurde angelegt.</strong><br>";
+        echo "<p><strong>Besuch wurde bearbeitet.</strong><br>";
         
     }
-    ?>
-    <a href="bisherige_besuche.php">Bisherige Besuche</a>
+    
+?>
 </div>
-
-
-
-
-
-
-
-
-            
-
-

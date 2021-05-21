@@ -20,8 +20,8 @@
     right: 0px;
     width: calc(100vw - 100px);
     padding: 20px 50px;
-    background-color: var(--b2);
-    border-top: 5px solid var(--c1);
+    background-color: lightblue;
+    border-top: 5px solid black;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto;
@@ -48,9 +48,3 @@
     justify-self: left;
 }
 
-#loeschen {
-    border-radius: 30px;
-    font-weight: normal;
-    font-size: 10px;
-    padding: 2px 5px;
-}

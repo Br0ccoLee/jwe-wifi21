@@ -54,28 +54,5 @@ if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['role
 }
 
 
-/*
-	VERSUCHEN ZU INTEGRIEREN!!!!
 
-    function checkUsername($username) {
-        if (!preg_match("/^[a-zA-Z0-9]+$/", $username)) {
-            echo "Der Benutzername ist zulässig";
-        } else {
-            echo "Der Benutzername ist unzulässig. Bitte verwenden Sie nur 0-9, a-z und Punkte";
-        }
-
-        // echo preg_match("/^[a-zA-Z0-9]+$/", $username);
-    }
-
-    function checkPassword($username) {
-        if (!(preg_match("/[a-zA-Z]{1,}+[0-9]{1,}+[\!\$\%\&\(\)\=\?]{1,}/", $username) == 1)) {
-            echo "Der Benutzername ist zulässig";
-        } else {
-            echo "Der Benutzername ist unzulässig. Bitte verwenden Sie nur 0-9, a-z und Punkte";
-        }
-
-        // echo preg_match("/^[a-zA-Z0-9]+$/", $username);
-    }
-
-	*/
 	
